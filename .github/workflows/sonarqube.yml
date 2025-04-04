@@ -1,0 +1,9 @@
+- name: Run SonarScanner
+  env:
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  run: |
+    ./sonar-scanner-5.0.1.3006/bin/sonar-scanner \
+      -Dsonar.projectKey=comando-estelar \
+      -Dsonar.sources=. \
+      -Dsonar.host.url=https://f5e9-200-124-51-71.ngrok-free.app/ \
+      -Dsonar.login=$SONAR_TOKEN
